@@ -40,7 +40,7 @@ module OkuribitoRails
 
     def destroy_method(method)
       a = method.split(/\s*(#|\.)\s*/)
-      MethodCallSituation.find_by(class_name: a[0], method_symbol: a[1], method_name: a[2]).destroy
+      MethodCallSituation.find_by(class_name: a[0], method_symbol: a[1], method_name: a[2])&.destroy
     end
   end
 end
